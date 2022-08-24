@@ -4,21 +4,25 @@ import { Redirect } from "react-router-dom";
 
 const NewPollForm = () => {
   const [pollObject, setPollObject] = useState({});
+
   const [shouldRedirect, setShouldRedirect] = useState(false);
+
   const [errors, setErrors] = useState({});
+
   const [newPoll, setNewPoll] = useState({
     title: "",
     body: "",
     option_1: "",
     option_2: ""
   });
+
   const clearForm = (event) => {
     event.preventDefault();
     setNewPoll({
-    title: "",
-    body: "",
-    option_1: "",
-    option_2: ""
+      title: "",
+      body: "",
+      option_1: "",
+      option_2: ""
     });
     setErrors({});
   };
@@ -43,7 +47,7 @@ const NewPollForm = () => {
   };
 
   if (shouldRedirect) {
-    return <Redirect push to={`/polls/${pollObject.poll.id}`} />;
+    return <Redirect push to={`/polls/${pollObject.id}`} />;
   }
 
   const handleInputChange = (event) => {

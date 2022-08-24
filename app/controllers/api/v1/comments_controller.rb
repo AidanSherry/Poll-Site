@@ -8,7 +8,6 @@ class Api::V1::CommentsController < ApiController
         else
           render json: { errors: comment.errors.full_messages }, status: 400
         end
-      end
     end
 
     private

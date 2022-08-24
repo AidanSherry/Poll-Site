@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const CommentTile = (props) => {
     return (
-        <div>
+        <div className="comment-tile">
             {props.comment}
         </div>
       );

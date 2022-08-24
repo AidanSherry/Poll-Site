@@ -49,7 +49,7 @@ const NewCommentForm = ({ addComment }) => {
   };
 
   return (
-    <div>
+    <div className="new-comment-form">
       <form onSubmit={onSubmitHandler}>
         <h2>Submit A Comment</h2>
         <ErrorList errors={errors} />

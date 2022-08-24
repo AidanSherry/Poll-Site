@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import MainPollSection from "./MainPollSection";
 import CommentContainer from "../Comments/CommentsContainer";
 const PollShowPage = (props) => {
-    const [poll, setPoll] = useState({});
-    const [comments, setComments] = useState([]);
+    const [poll, setPoll] = useState({ comments: []});
+    // const [comments, setComments] = useState([]);
 
     let pollId = props.match.params.id;
 
@@ -19,9 +19,9 @@ const PollShowPage = (props) => {
             throw new Error(errorMessage);
         }
         const pollData = await response.json();
-        setPoll(pollData);
+            setPoll(pollData.poll);
         } catch (err) {
-        console.log(err);
+            console.log(err);
         }
     };
 
@@ -40,13 +40,12 @@ const PollShowPage = (props) => {
           {
             response.status === 401
               ? alert(commentData.error)
-              : setComments(comments.concat(commentData.review));
+              : setComments(comments.concat(commentData.comment));
           }
         } catch (err) {
           console.log(err);
         }
       };
-
     return (
         <div>
           <MainPollSection
@@ -57,7 +56,7 @@ const PollShowPage = (props) => {
             option_2={poll.option_2}
           />
 
-          <CommentContainer comments={comments} addComment={addComment} />
+          <CommentContainer comments={poll.comments} addComment={addComment} />
         </div>
       );
 };

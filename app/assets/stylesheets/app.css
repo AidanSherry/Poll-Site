@@ -77,3 +77,24 @@
 .top-bar, .top-bar ul{
     background-color: white !important;
 }
+
+.comment-tile {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.comment-title {
+    text-align: center;
+    font-weight: 600;
+}
+
+.comments {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.new-comment-form {
+    margin-bottom: 50px;
+    padding-left: 20px;
+}

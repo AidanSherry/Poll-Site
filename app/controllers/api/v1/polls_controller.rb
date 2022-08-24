@@ -15,6 +15,7 @@ class Api::V1::PollsController < ApiController
 
     def show
         poll = Poll.find(params[:id])
+        # ser = PollSerializer.new(poll)
         render json: poll
     end
 

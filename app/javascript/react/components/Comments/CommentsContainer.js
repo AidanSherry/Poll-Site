@@ -7,6 +7,7 @@ const CommentContainer = ({ comments, addComment }) => {
     return (
       <CommentTile
         key={comment.id}
+        comment={comment.comment}
         pollId={comment.comment_id}
         commentId={comment.id}
       />
@@ -15,8 +16,10 @@ const CommentContainer = ({ comments, addComment }) => {
 
   return (
     <div>
-      <h2>Comments</h2>
-      <div>{listOfComments}</div>
+      <div className="comments">
+        <h2 className="comment-title">Comments</h2>
+        <div>{listOfComments}</div>
+      </div>
       <NewCommentForm addComment={addComment} />
     </div>
   );

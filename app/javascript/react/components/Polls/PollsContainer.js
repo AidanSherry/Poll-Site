@@ -35,6 +35,7 @@ const PollsContainer = (props) => {
       />
     );
   });
+  
   return (
     <div className="poll-index-container">
       <h1 className="poll-index-text"> Click on a poll to vote! </h1>
