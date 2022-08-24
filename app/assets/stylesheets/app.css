@@ -1,0 +1,79 @@
+.PollShowPage {
+    width: 50%;
+    height: 80%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Title {
+    text-align: center;
+}
+
+.Body {
+    text-align: center;
+}
+
+.Options {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.Option_1 {
+    width: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+    font-size: larger;
+    text-align: center;
+    float: left;
+}
+
+.Option_2 {
+    width: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+    font-size: larger;
+    text-align: center;
+    float: right;
+}
+
+.poll-photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+.poll-index-text {
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    font-weight: 600;
+}
+
+.tile-title  {
+    text-align: center;
+    color: black;
+}
+
+.top-bar {
+    background-color: white !important;
+}
+
+.top-bar a{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+    margin-left: 10%;
+}
+
+.top-bar, .top-bar ul{
+    background-color: white !important;
+}

@@ -14,7 +14,7 @@ const NewPollForm = () => {
   });
   const clearForm = (event) => {
     event.preventDefault();
-    setNewArtist({
+    setNewPoll({
     title: "",
     body: "",
     option_1: "",
@@ -32,7 +32,7 @@ const NewPollForm = () => {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(newArtist),
+        body: JSON.stringify(newPoll),
       });
       const pollData = await response.json();
       setPollObject(pollData);

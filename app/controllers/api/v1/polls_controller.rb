@@ -1,4 +1,5 @@
 class Api::V1::PollsController < ApiController
+
     def index
         render json: { polls: Poll.all }
     end
