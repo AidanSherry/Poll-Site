@@ -84,7 +84,7 @@ const NewPollForm = () => {
     <div>
       <form onSubmit={onSubmitHandler}>
         <ErrorList errors={errors} />
-        <label>
+        <label className="title-label">
           Title:
           <input
             type="text"
@@ -94,7 +94,7 @@ const NewPollForm = () => {
           />
         </label>
 
-        <label>
+        <label className="body-label">
           Body:
           <input
             type="text"
@@ -104,7 +104,7 @@ const NewPollForm = () => {
           />
         </label>
 
-        <label>
+        <label className="option_1-label">
           Option 1:
           <input
             type="text"
@@ -114,7 +114,7 @@ const NewPollForm = () => {
           />
         </label>
 
-        <label>
+        <label className="option_2-label">
           Option 2:
           <input
             type="text"
@@ -124,7 +124,7 @@ const NewPollForm = () => {
           />
         </label>
 
-        <div>
+        <div className="form-buttons">
           <button onClick={clearForm}>
             Clear
           </button>

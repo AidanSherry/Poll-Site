@@ -98,3 +98,40 @@
     margin-bottom: 50px;
     padding-left: 20px;
 }
+
+.title-label {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: x-large;
+    width: 40%;
+}
+
+.body-label {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: x-large;
+    width: 60%;
+}
+
+.option_1-label {
+    margin-left: 300px;
+    text-align: center;
+    font-size: large;
+    width: 20%;
+    float: left;
+}
+
+.option_2-label {
+    margin-right: 300px;
+    text-align: center;
+    font-size: large;
+    width: 20%;
+    float: right;
+}
+
+.form-buttons {
+    margin-top: 150px;
+    margin-left: 550px;
+}

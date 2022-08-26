@@ -18,9 +18,11 @@ ActiveRecord::Schema.define(version: 2022_08_24_171945) do
   create_table "comments", force: :cascade do |t|
     t.text "comment", null: false
     t.bigint "poll_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["poll_id"], name: "index_comments_on_poll_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "polls", force: :cascade do |t|
