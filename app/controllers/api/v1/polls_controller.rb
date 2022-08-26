@@ -1,4 +1,6 @@
 class Api::V1::PollsController < ApiController
+    before_action :authenticate_user_fetch!, except: [:index, :show]
+
     def index
         render json: { polls: Poll.all }
     end
@@ -21,6 +23,18 @@ class Api::V1::PollsController < ApiController
 
     def poll_params
         params.require(:poll).permit(:title, :body, :option_1, :option_2)
+    end
+
+    def authorize_user
+        if !user_signed_in? || !(current_user.role == "admin")
+          render json: {error: ["Only admins have access to this feature"]}
+        end
+    end
+    
+    def authenticate_user_fetch!
+        if !user_signed_in?
+            render json: { error: "you must be signed in to submit a review"}, status: 401
+        end
     end
 
 end

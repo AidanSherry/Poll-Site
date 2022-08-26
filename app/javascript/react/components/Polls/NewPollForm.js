@@ -4,21 +4,25 @@ import { Redirect } from "react-router-dom";
 
 const NewPollForm = () => {
   const [pollObject, setPollObject] = useState({});
+
   const [shouldRedirect, setShouldRedirect] = useState(false);
+
   const [errors, setErrors] = useState({});
+
   const [newPoll, setNewPoll] = useState({
     title: "",
     body: "",
     option_1: "",
     option_2: ""
   });
+
   const clearForm = (event) => {
     event.preventDefault();
-    setNewArtist({
-    title: "",
-    body: "",
-    option_1: "",
-    option_2: ""
+    setNewPoll({
+      title: "",
+      body: "",
+      option_1: "",
+      option_2: ""
     });
     setErrors({});
   };
@@ -32,7 +36,7 @@ const NewPollForm = () => {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(newArtist),
+        body: JSON.stringify(newPoll),
       });
       const pollData = await response.json();
       setPollObject(pollData);
@@ -43,7 +47,7 @@ const NewPollForm = () => {
   };
 
   if (shouldRedirect) {
-    return <Redirect push to={`/polls/${pollObject.poll.id}`} />;
+    return <Redirect push to={`/polls/${pollObject.id}`} />;
   }
 
   const handleInputChange = (event) => {
@@ -80,7 +84,7 @@ const NewPollForm = () => {
     <div>
       <form onSubmit={onSubmitHandler}>
         <ErrorList errors={errors} />
-        <label>
+        <label className="title-label">
           Title:
           <input
             type="text"
@@ -90,7 +94,7 @@ const NewPollForm = () => {
           />
         </label>
 
-        <label>
+        <label className="body-label">
           Body:
           <input
             type="text"
@@ -100,7 +104,7 @@ const NewPollForm = () => {
           />
         </label>
 
-        <label>
+        <label className="option_1-label">
           Option 1:
           <input
             type="text"
@@ -110,7 +114,7 @@ const NewPollForm = () => {
           />
         </label>
 
-        <label>
+        <label className="option_2-label">
           Option 2:
           <input
             type="text"
@@ -120,7 +124,7 @@ const NewPollForm = () => {
           />
         </label>
 
-        <div>
+        <div className="form-buttons">
           <button onClick={clearForm}>
             Clear
           </button>
